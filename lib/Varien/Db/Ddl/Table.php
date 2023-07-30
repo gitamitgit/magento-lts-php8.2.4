@@ -339,9 +339,11 @@ class Varien_Db_Ddl_Table
                         $precision  = $size[0];
                         $scale      = $size[1];
                     }
-                } elseif (preg_match('#^(\d+),(\d+)$#', $size, $match)) {
-                    $precision  = $match[1];
-                    $scale      = $match[2];
+                } elseif ( !is_null($size) && !empty($size) ) {
+					if(preg_match('#^(\d+),(\d+)$#', $size, $match)){
+						$precision  = $match[1];
+						$scale      = $match[2];
+					}
                 }
                 // check options
                 if (isset($options['precision'])) {

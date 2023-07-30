@@ -1,3 +1,13 @@
+# JB Theme Files
+/adminer.php
+/app/design/frontend/rwd/*
+/info/*
+/skin/frontend/rwd/*
+/js/inky/*
+
+# Warden Env
+.env
+ 
 # Visual Studio Code
 .vscode/*
 !.vscode/settings.json
