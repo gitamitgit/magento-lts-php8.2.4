@@ -4,6 +4,8 @@
 /info/*
 /skin/frontend/rwd/*
 /js/inky/*
+/js/lib/jquery/*
+/js/jquery/*
 
 # Warden Env
 .env
