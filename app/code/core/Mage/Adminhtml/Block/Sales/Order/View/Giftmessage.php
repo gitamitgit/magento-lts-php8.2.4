@@ -88,7 +88,6 @@ class Mage_Adminhtml_Block_Sales_Order_View_Giftmessage extends Mage_Adminhtml_B
      */
     public function getSaveButtonHtml()
     {
-		//echo "<pre>";var_dump($this->getChild('save_button'));exit;
         if($this->getChild('save_button')){
 			$this->getChild('save_button')->setOnclick(
 				'giftMessagesController.saveGiftMessage(\'' . $this->getHtmlId() . '\')'
