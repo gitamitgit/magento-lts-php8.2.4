@@ -760,8 +760,10 @@ class Mage_CatalogSearch_Model_Resource_Fulltext extends Mage_Core_Model_Resourc
                 $value = Mage::app()->getStore($storeId)->roundPrice($value);
             }
         }
-
-        $value = preg_replace("#\s+#siu", ' ', trim(strip_tags($value)));
+		
+		if( !is_null($value) && !empty($value) ){
+			$value = preg_replace("#\s+#siu", ' ', trim(strip_tags($value)));
+		}
 
         return $value;
     }

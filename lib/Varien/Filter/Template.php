@@ -124,21 +124,24 @@ class Varien_Filter_Template implements Zend_Filter_Interface
             self::CONSTRUCTION_IF_PATTERN     => 'ifDirective',
         ];
         foreach ($directives as $pattern => $directive) {
-            if (preg_match_all($pattern, $value, $constructions, PREG_SET_ORDER)) {
-                foreach ($constructions as $index => $construction) {
-                    $replacedValue = '';
-                    $callback = [$this, $directive];
-                    try {
-                        $replacedValue = call_user_func($callback, $construction);
-                    } catch (Exception $e) {
-                        throw $e;
-                    }
-                    $value = str_replace($construction[0], $replacedValue, $value);
-                }
-            }
+			if(!is_null($value) && !empty($value)){
+				if (preg_match_all($pattern, $value, $constructions, PREG_SET_ORDER)) {
+					foreach ($constructions as $index => $construction) {
+						$replacedValue = '';
+						$callback = [$this, $directive];
+						try {
+							$replacedValue = call_user_func($callback, $construction);
+						} catch (Exception $e) {
+							throw $e;
+						}
+						$value = str_replace($construction[0], $replacedValue, $value);
+					}
+				}
+			}
         }
 
-        if (preg_match_all(self::CONSTRUCTION_PATTERN, $value, $constructions, PREG_SET_ORDER)) {
+        
+        if (!is_null($value) && !empty($value) && preg_match_all(self::CONSTRUCTION_PATTERN, $value, $constructions, PREG_SET_ORDER)) {
             foreach ($constructions as $index => $construction) {
                 $replacedValue = '';
                 $callback = [$this, $construction[1] . 'Directive'];

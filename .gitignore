@@ -1,3 +1,19 @@
+# JB Theme Files
+/adminer.php
+/app/code/local/
+/app/design/adminhtml/default/openmage/layout/inky/*
+/app/design/frontend/rwd/*
+/app/etc/modules/Inky_Designersoftware.xml
+/info/*
+/lib/Inky/*
+/skin/frontend/rwd/*
+/js/inky/*
+/js/lib/jquery/*
+/js/jquery/*
+
+# Warden Env
+.env
+ 
 # Visual Studio Code
 .vscode/*
 !.vscode/settings.json
