@@ -1,11 +1,16 @@
 # JB Theme Files
 /adminer.php
+<<<<<<< HEAD
 /app/code/local/
 /app/design/adminhtml/default/openmage/layout/inky/*
 /app/design/frontend/rwd/*
 /app/etc/modules/Inky_Designersoftware.xml
 /info/*
 /lib/Inky/*
+=======
+/app/design/frontend/rwd/*
+/info/*
+>>>>>>> 12f40bdf92937ddb35dfe8973daa54d7652bf07f
 /skin/frontend/rwd/*
 /js/inky/*
 /js/lib/jquery/*
